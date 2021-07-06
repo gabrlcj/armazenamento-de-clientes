@@ -5,9 +5,12 @@ import Header from '../partials/Header/Header'
 
 const useStyles = makeStyles(() => ({
     container: {
-        padding: '18px 0',
+        padding: '22px 0',
         color: '#121212',
-    }
+        textAlign: 'center',
+        border: '10px ridge #293241',
+        height: '65vh',
+    },
 }))
 
 const Default = ({ children }) => {

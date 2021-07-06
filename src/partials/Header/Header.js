@@ -3,7 +3,6 @@ import {
     AppBar,
     Toolbar,
     Typography,
-    Button,
     IconButton,
     Drawer,
     List,
@@ -14,7 +13,6 @@ import {
 import { useHistory } from 'react-router-dom'
 
 import MenuIcon from '@material-ui/icons/Menu'
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded'
 import ContactsRoundedIcon from '@material-ui/icons/ContactsRounded'
 import PersonAddRoundedIcon from '@material-ui/icons/PersonAddRounded'
 
@@ -42,28 +40,21 @@ const Header = () => {
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => toggleMenu()}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Aplicação
+                    <Typography variant="h5" className={classes.title}>
+                        App
                     </Typography>
-                    <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
             <Drawer open={menuOpen} onClose={() => toggleMenu()}>
-                <List>
-                    <ListItem button onClick={() => handleMenuClick('/')}>
-                        <ListItemIcon>
-                            <HomeRoundedIcon/>
-                        </ListItemIcon>
-                        <ListItemText>Home</ListItemText>
-                    </ListItem>
+                <List className={classes.list}>
                     <ListItem button onClick={() => handleMenuClick('/customers')}>
-                        <ListItemIcon>
+                        <ListItemIcon className={classes.icon}>
                             <ContactsRoundedIcon/>
                         </ListItemIcon>
                         <ListItemText>Lista de Clientes</ListItemText>
                     </ListItem>
                     <ListItem button onClick={() => handleMenuClick('/customers/add')}>
-                        <ListItemIcon>
+                        <ListItemIcon className={classes.icon}>
                             <PersonAddRoundedIcon/>
                         </ListItemIcon>
                         <ListItemText>Cadastrar Cliente</ListItemText>

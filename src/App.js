@@ -10,7 +10,6 @@ import TemplatePage from './templates/Page'
 
 import CustomersList from './pages/Customers/List'
 import CustomersRegister from './pages/Customers/Register'
-import Home from './pages/Home'
 
 const App = () => {
   return (
@@ -22,9 +21,6 @@ const App = () => {
                 </Route>
                 <Route path="/customers">
                     <TemplatePage title="Lista de Clientes" Component={CustomersList} />
-                </Route>
-                <Route path="/">
-                <TemplatePage title="Página Inicial" Component={Home} />
                 </Route>
             </Switch>
         </TemplateDefault>

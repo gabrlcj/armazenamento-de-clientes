@@ -87,7 +87,8 @@ const Register = () => {
                     label="Digite o seu nome" 
                     name='name' value={form.name.value} 
                     variant="outlined" 
-                    onChange={inputChange}/>
+                    onChange={inputChange}
+                    color='primary'/>
             </div>
             <div className={classes.wrapper}>
                 <TextField 

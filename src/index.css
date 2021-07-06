@@ -3,3 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background: #e0fbfc;
+}
+
+.MuiContainer-root {
+    margin-top: 50px;
+    background: #1212126d;
+    box-shadow: 0 0 15px black;
+}

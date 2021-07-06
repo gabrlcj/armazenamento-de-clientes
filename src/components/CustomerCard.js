@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
+
+  icon: {
+      color: '#121212',
+  }
 }))
 
 const CustomerCard = ({ id, name, lastname, email, avatar, className, onRemoveCustomer }) => {
@@ -48,10 +52,10 @@ const CustomerCard = ({ id, name, lastname, email, avatar, className, onRemoveCu
                 subheader={email}
             />
             <CardActions disableSpacing>
-                <IconButton aria-label="Editar card">
+                <IconButton aria-label="Editar card" className={classes.icon}>
                     <EditRoundedIcon />
                 </IconButton>
-                <IconButton aria-label="Deletar card" onClick={removeCustomer}>
+                <IconButton aria-label="Deletar card" onClick={removeCustomer} className={classes.icon}>
                     <DeleteForeverRoundedIcon />
                 </IconButton>
             </CardActions>
