@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from 'react-router-dom'
 
-function App() {
+import TemplateDefault from './templates/Default'
+import TemplatePage from './templates/Page'
+
+import CustomersList from './pages/Customers/List'
+import CustomersRegister from './pages/Customers/Register'
+import Home from './pages/Home'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+        <TemplateDefault>
+            <Switch>
+                <Route path="/customers/add">
+                    <TemplatePage title="Cadastro de Clientes" Component={CustomersRegister} />
+                </Route>
+                <Route path="/customers">
+                    <TemplatePage title="Lista de Clientes" Component={CustomersList} />
+                </Route>
+                <Route path="/">
+                <TemplatePage title="Página Inicial" Component={Home} />
+                </Route>
+            </Switch>
+        </TemplateDefault>
+    </Router>
+  )
 }
 
 export default App;
