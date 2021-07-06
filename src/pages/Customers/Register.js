@@ -2,8 +2,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles'
 
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import { TextField, Button } from '@material-ui/core'
+
+import Toasty from '../../components/Toasty'
 
 
 const useStyle = makeStyles((theme) => ({
@@ -70,10 +71,12 @@ const Register = () => {
         axios.post('https://reqres.in/api/users', {
             name: form.name.value,
             job: form.job.value,
-        }).then(response => {
-            console.log(response)
+        }).then(() => {
+            setOpenToasty(true)
         })
     }
+
+    const [openToasty, setOpenToasty] = useState(false)
 
     return (
         <>
@@ -100,6 +103,12 @@ const Register = () => {
                     Cadastrar
                 </Button>
             </div>
+            <Toasty 
+                open={openToasty} 
+                severity="success" 
+                text="Cadastro realizado com sucesso"
+                onClose={() => setOpenToasty(false)}
+                />
         </>
     )
 }
