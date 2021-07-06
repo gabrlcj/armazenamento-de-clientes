@@ -18,7 +18,7 @@ const Toasty = ({ open, text, severity, onClose }) => {
           vertical: 'bottom',
           horizontal: 'left',
         }}
-        open={open}
+        open={open}f
         autoHideDuration={6000}
         onClose={handleClose}
         >
